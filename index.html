@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Capture Moments - Home</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}">
+</head>
+<body>
+    <header>
+        <nav>
+            <a href="{{ url_for('home') }}">Home</a>
+            <a href="{{ url_for('about') }}">About</a>
+            <a href="{{ url_for('portfolio') }}">Portfolio</a>
+            <a href="{{ url_for('photographers_page') }}">Photographers</a>
+            <a href="{{ url_for('booking') }}">Book Now</a>
+            <a href="{{ url_for('pricing') }}">Pricing</a>
+            <a href="{{ url_for('locations_page') }}">Locations</a>
+            <a href="{{ url_for('events') }}">Events</a>
+            <a href="{{ url_for('contact') }}">Contact</a>
+        </nav>
+    </header>
+    <main>
+        <h1>Welcome to Capture Moments</h1>
+        <p>Your one-stop solution for professional photography services.</p>
+
+        <h2>Featured Photographers</h2>
+        <div class="photographer-list">
+            {% for photographer in photographers %}
+            <div class="photographer-card">
+                <img src="{{ photographer.image }}" alt="{{ photographer.name }}" class="photographer-img">
+                <h3>{{ photographer.name }}</h3>
+                <p>Specialty: {{ photographer.specialty }}</p>
+                <p>Location: {{ photographer.location }}</p>
+                <p>Rating: {{ photographer.rating }} &#9733;</p>
+                <a href="{{ url_for('photographer_detail', photographer_id=photographer.id) }}" class="button">View Profile</a>
+            </div>
+            {% else %}
+            <p>No featured photographers available at the moment.</p>
+            {% endfor %}
+        </div>
+    </main>
+    <footer>
+        <p>&copy; 2024 Capture Moments. All rights reserved.</p>
+    </footer>
+</body>
+</html>

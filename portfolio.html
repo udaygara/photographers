@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Capture Moments - Portfolio</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}">
+</head>
+<body>
+    <header>
+        <nav>
+            <a href="{{ url_for('home') }}">Home</a>
+            <a href="{{ url_for('about') }}">About</a>
+            <a href="{{ url_for('portfolio') }}">Portfolio</a>
+            <a href="{{ url_for('photographers_page') }}">Photographers</a>
+            <a href="{{ url_for('booking') }}">Book Now</a>
+            <a href="{{ url_for('pricing') }}">Pricing</a>
+            <a href="{{ url_for('locations_page') }}">Locations</a>
+            <a href="{{ url_for('events') }}">Events</a>
+            <a href="{{ url_for('contact') }}">Contact</a>
+        </nav>
+    </header>
+    <main>
+        <h1>Our Portfolio</h1>
+        <p>A collection of some of our finest work, showcasing the talent of our photographers.</p>
+        <div class="gallery">
+            {% for image_url in gallery_images %}
+            <div class="gallery-item">
+                <img src="{{ image_url }}" alt="Portfolio Image">
+            </div>
+            {% endfor %}
+        </div>
+    </main>
+    <footer>
+        <p>&copy; 2024 Capture Moments. All rights reserved.</p>
+    </footer>
+</body>
+</html>

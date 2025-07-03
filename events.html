@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Capture Moments - Events</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}">
+</head>
+<body>
+    <header>
+        <nav>
+            <a href="{{ url_for('home') }}">Home</a>
+            <a href="{{ url_for('about') }}">About</a>
+            <a href="{{ url_for('portfolio') }}">Portfolio</a>
+            <a href="{{ url_for('photographers_page') }}">Photographers</a>
+            <a href="{{ url_for('booking') }}">Book Now</a>
+            <a href="{{ url_for('pricing') }}">Pricing</a>
+            <a href="{{ url_for('locations_page') }}">Locations</a>
+            <a href="{{ url_for('events') }}">Events</a>
+            <a href="{{ url_for('contact') }}">Contact</a>
+        </nav>
+    </header>
+    <main>
+        <h1>Events We Cover</h1>
+        <p>Our photographers are skilled in capturing a wide range of events, ensuring every special moment is preserved.</p>
+        <div class="event-types">
+            <div class="event-card">
+                <h3>Weddings</h3>
+                <p>From intimate ceremonies to grand celebrations, we capture every emotion and detail of your special day.</p>
+            </div>
+            <div class="event-card">
+                <h3>Corporate Events</h3>
+                <p>Conferences, product launches, award ceremonies, and team building - professional coverage for your business needs.</p>
+            </div>
+            <div class="event-card">
+                <h3>Birthday Parties</h3>
+                <p>Celebrate milestones with vibrant and fun photographs of your birthday festivities.</p>
+            </div>
+            <div class="event-card">
+                <h3>Family Gatherings</h3>
+                <p>Document precious family reunions, anniversaries, and other memorable get-togethers.</p>
+            </div>
+            <div class="event-card">
+                <h3>Concerts & Performances</h3>
+                <p>Capturing the energy and excitement of live music and stage performances.</p>
+            </div>
+            <div class="event-card">
+                <h3>Sports Events</h3>
+                <p>Dynamic action shots and candid moments from your sporting events.</p>
+            </div>
+        </div>
+        <p>Don't see your event type listed? <a href="{{ url_for('contact') }}">Contact us</a> to discuss your specific requirements!</p>
+    </main>
+    <footer>
+        <p>&copy; 2024 Capture Moments. All rights reserved.</p>
+    </footer>
+</body>
+</html>
